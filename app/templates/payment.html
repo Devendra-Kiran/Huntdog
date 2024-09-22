@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Payment</h1>
+    <form action="" method="post">
+        <label for="card_number">Card Number:</label>
+        <input type="text" id="card_number" name="card_number"><br><br>
+        <label for="expiration_date">Expiration Date:</label>
+        <input type="text" id="expiration_date" name="expiration_date"><br><br>
+        <label for="cvc">CVC:</label>
+        <input type="text" id="cvc" name="cvc"><br><br>
+        <input type="submit" value="Pay">
+    </form>
+    <script src="https://js.stripe.com/v3/"></script>
+    <script>
+        // Initialize Stripe.js
+        const stripe = Stripe('{{ payment_intent.client_secret }}');
+        // ...
+    </script>
+{% endblock %}

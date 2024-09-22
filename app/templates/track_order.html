@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Track Order</h1>
+    <p>Order ID: {{ order.id }}</p>
+    <p>Customer Name: {{ order.customer_name }}</p>
+    <p>Order Date: {{ order.order_date }}</p>
+    <p>Status: {{ order.status }}</p>
+    <p>Tracking Number: {{ order.tracking_number }}</p>
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Product Catalog</h1>
+    <form action="/search" method="get">
+        <input type="search" name="q" placeholder="Search products">
+        <button type="submit">Search</button>
+    </form>
+    <ul>
+        {% for product in products %}
+            <li>
+                {{ product.name }} ({{ product.price }})
+                <p>{{ product.description }}</p>
+            </li>
+        {% endfor %}
+    </ul>
+    <h2>Filter by Category</h2>
+    <ul>
+        {% for category in ["Electronics", "Fashion", "Home Goods"] %}
+            <li>
+                <a href="/filter?category={{ category }}">{{ category }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}
